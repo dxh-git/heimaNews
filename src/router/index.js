@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 // 注册路由的插件，把路由关联到vue。固定要加的
 Vue.use(VueRouter)
 
+
 // 路由配置
 const routes = [
 	{
@@ -18,7 +19,17 @@ const routes = [
 		// 注册页面路由
 		path:'/Register',
 		component: () => import("@/views/Register")
-	}
+	},
+	{
+		// 个人中心页面路由
+		path:'/user',
+		component: () => import("@/views/user")
+	},
+	{
+		// 个人中心页面路由
+		path:'/personal',
+		component: () => import("@/views/personal")
+	},
 ]
 
 const router = new VueRouter({

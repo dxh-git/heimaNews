@@ -63,11 +63,16 @@ export default {
         method: "post",
         data: this.form
       }).then(res=>{
-        //   console.log(res);
+          console.log(res);
         // 获取到返回的信息
+        const {data} = res
         let {message} = res.data
         // 使用vant的弹窗提示用，success表示成功的弹窗
         this.$toast.success(message)
+        // 当登入成功是把token和id存到本地
+        localStorage.setItem("userInfo",JSON.stringify(data));
+        this.$router.push('/personal')
+
           
       })
       
