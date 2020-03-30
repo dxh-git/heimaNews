@@ -1,12 +1,13 @@
 <template>
   <div class="w">
-    <div class="nev">
-      <!-- $router.back()是实例下的属性，可以直接使用 点击返回上一步-->
+    <!-- <div class="nev"> 
+      $router.back()是实例下的属性，可以直接使用 点击返回上一步
       <span class="iconfont iconjiantou2" @click="$router.back()"></span>
       <strong>个人中心</strong>
-      <!-- $router.push()是实例下的属性，点击去首页 -->
+      $router.push()是实例下的属性，点击去首页
       <span class="iconfont iconshouye" @click="$router.push('/')"></span>
-    </div>
+    </div> -->
+    <Navbar title="个人中心" :showHome="true"/>
     <div class="header">
       <div class="img">
         <img :src="$axios.defaults.baseURL + userInfo.head_img" alt="头像" />
@@ -45,6 +46,7 @@
 
 <script>
 // 导入组件
+import Navbar from "@/components/Navbar";
 import Listbar from "@/components/Listbar";
 // 引入第三方的日期格式处理的工具库
 import moment from "moment";
@@ -101,7 +103,8 @@ export default {
     }
   },
   components: {
-    Listbar
+    Listbar,
+    Navbar
   }
 };
 </script>

@@ -21,9 +21,9 @@ const routes = [
 		component: () => import("@/views/Register")
 	},
 	{
-		// 个人中心页面路由
-		path:'/user',
-		component: () => import("@/views/user")
+		// 编辑页面路由
+		path:'/edit',
+		component: () => import("@/views/EditProfile")
 	},
 	{
 		// 个人中心页面路由
