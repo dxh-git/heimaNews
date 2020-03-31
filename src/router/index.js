@@ -30,6 +30,21 @@ const routes = [
 		path:'/personal',
 		component: () => import("@/views/personal")
 	},
+	{
+		// 我的关注页
+		path:'/follow',
+		component: () => import("@/views/Follow")
+	},
+	{
+		// 我的跟帖页
+		path:'/comment',
+		component: () => import("@/views/Comment")
+	},
+	{
+		// 我的收藏页
+		path:'/star',
+		component: () => import("@/views/Star")
+	},
 ]
 
 const router = new VueRouter({

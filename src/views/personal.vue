@@ -38,6 +38,7 @@
       :key="index"
       :left="item.left"
       :right="item.right"
+      :path="item.path"
     ></Listbar>
     <!-- <Listbar @click.native="handleClick" left="退出" /> -->
     <div class="tuichu" @click="handleClick">退出</div>
@@ -74,9 +75,9 @@ export default {
   data() {
     return {
       rows: [
-        { left: "我的关注", right: "关注的用户" },
-        { left: "我的跟帖", right: "跟帖/回复" },
-        { left: "我的收藏", right: "文章/视频" }
+        { left: "我的关注", right: "关注的用户" ,path:"/follow"},
+        { left: "我的跟帖", right: "跟帖/回复" , path:"/comment"},
+        { left: "我的收藏", right: "文章/视频",path:"star" }
       ],
       userInfo: {},
       // moment是日期处理的工具库，为了在模板中可以使用，所以需要绑定在data中
