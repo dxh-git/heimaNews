@@ -4,8 +4,8 @@ import Vue from 'vue'
 import App from './App.vue'
 // 路由对象
 import router from './router'
-// 引入vant ui
-import Vant from 'vant';
+// 引入vant ui组件库
+import Vant , {Toast} from 'vant';
 // 注册
 Vue.use(Vant);
 // 导入axios
@@ -38,6 +38,21 @@ router.beforeEach((to,from,next)=>{
   }
 })
 // next：必须要调用，next就类似于你nodejs的中间件，调用才会加载后面的内容
+// 添加 response 拦截器  处理登入错误时的情况
+// axios的响应拦截器 文档地址：https://github.com/axios/axios#interceptors
+axios.interceptors.response.use(function (response) {
+  return response;
+}, function (error) {
+  // 如果请求返回的结果是错误的，会进入到错误的处理函数中
+	// error是js原生的错误对象，我们可以用过error.response可以获取到详细的信息
+  const  { statusCode,message} = error.response.data
+  if(statusCode ===400 ){
+    // 弹框
+    Toast.fail(message);
+  }
+  return Promise.reject(error)
+  
+});
 // 创建一个根实例
 // .$mount('#app') 相当于el配置，指定id为app的元素作为模板
 new Vue({
