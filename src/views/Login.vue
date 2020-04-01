@@ -29,7 +29,7 @@
       />
       <div class="btn">
         <van-button round block type="info" native-type="submit">
-          提交
+          登入
         </van-button>
       </div>
     </van-form>
@@ -83,7 +83,7 @@ export default {
 
 <style lang="less" scoped>
     .w {
-      width: 360px;
+     
       padding: 20/360 * 100vw;
     }
     .xx span {
