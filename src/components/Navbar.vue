@@ -5,7 +5,7 @@
       <span class="iconfont iconjiantou2" @click="$router.back()"></span>
       <strong>{{title}}</strong>
       <!-- $router.push()是实例下的属性，点击去首页 -->
-      <span class="iconfont iconshouye" v-if="showHome" @click="$router.push('/')"></span>
+      <span class="iconfont iconshouye" v-if="showHome" @click="$router.push('/index')"></span>
       <span v-else class="iconfont iconshouye" style="opacity: 0"></span>
     </div>
    

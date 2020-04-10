@@ -23,27 +23,77 @@ const routes = [
 	{
 		// 编辑页面路由
 		path:'/edit',
-		component: () => import("@/views/EditProfile")
+		component: () => import("@/views/EditProfile"),
+		meta:{
+			// 自定义一个变量代表时候需要授权访问
+			authorization:true
+		},
 	},
 	{
 		// 个人中心页面路由
 		path:'/personal',
-		component: () => import("@/views/personal")
+		component: () => import("@/views/personal"),
+		meta:{
+			// 自定义一个变量代表时候需要授权访问
+			authorization:true
+		},
 	},
 	{
 		// 我的关注页
 		path:'/follow',
-		component: () => import("@/views/Follow")
+		component: () => import("@/views/Follow"),
+		meta:{
+			// 自定义一个变量代表时候需要授权访问
+			authorization:true
+		},
 	},
 	{
 		// 我的跟帖页
 		path:'/comment',
-		component: () => import("@/views/Comment")
+		component: () => import("@/views/Comment"),
+		meta:{
+			// 自定义一个变量代表时候需要授权访问
+			authorization:true
+		},
 	},
 	{
 		// 我的收藏页
 		path:'/star',
-		component: () => import("@/views/Star")
+		component: () => import("@/views/Star"),
+		meta:{
+			// 自定义一个变量代表时候需要授权访问
+			authorization:true
+		},
+	},
+	{
+		// 首页路由
+		path:'/index',
+		component: () => import("@/views/index")
+	},
+	{
+		// 首页路由
+		path:'/indextow',
+		component: () => import("@/views/index2")
+	},
+	{
+		// 栏目管理路由
+		path:'/title',
+		component: () => import("@/views/Title_teb")
+	},
+	{
+		// 栏目管理路由
+		path:'/search',
+		component: () => import("@/views/search")
+	},
+	{
+		// 新闻详情页
+		path:'/post/:id',
+		component: () => import("@/views/post")
+	},
+	{
+		// 精彩跟帖
+		path:'/postComment/:id',
+		component: () => import("@/views/postComment")
 	},
 ]
 
